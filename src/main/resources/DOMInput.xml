@@ -1,0 +1,48 @@
+<?xml version = "1.0"?>
+<Vendors>
+     <Vendor id = "1">
+        <vendorName>Lucky store </vendorName>
+        <contactName>Samuel King </contactName>
+        <email>email1@email.com </email>
+        <phone>800-000-0002 </phone>
+        <Address id = "2">
+              <houseNumber>1256 </houseNumber>
+              <street>2nd street </street>
+              <apartmentNumber> </apartmentNumber>
+              <city>Seattle </city>>
+              <state>WA </state>>
+              <postalCode>98001 </postalCode>>
+              <country>USA </country>>
+        </Address>
+    </Vendor>
+    <Vendor id = "2">
+       <vendorName>Nike.com </vendorName>
+       <contactName> </contactName>
+       <email>email@email.com </email>
+       <phone>800-000-0001 </phone>
+       <Address id = "3">
+              <houseNumber>1 </houseNumber>
+              <street>MLK street </street>
+              <apartmentNumber> </apartmentNumber>
+              <city>Sacramento </city>>
+              <state>WA </state>>
+              <postalCode>97001 </postalCode>>
+              <country>USA </country>>
+        </Address>
+   </Vendor>
+   <Vendor id = "3">
+       <vendorName>Hamilton store </vendorName>
+       <contactName> </contactName>
+       <email>email2@email.com </email>
+       <phone>800-011-0001 </phone>
+       <Address id = "5">
+              <houseNumber>56432 </houseNumber>
+              <street>swiss Ave </street>
+              <apartmentNumber>Apt 3 </apartmentNumber>
+              <city>Asmara </city>>
+              <state> </state>>
+              <postalCode>27Z87 </postalCode>>
+              <country>Eritrea </country>>
+       </Address>
+    </Vendor>
+</Vendors>
