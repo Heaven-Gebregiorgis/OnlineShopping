@@ -1,0 +1,132 @@
+18:16:26.265 INFO  DOMParser -Vendor1:vendorName=Lucky store 
+18:16:26.276 INFO  DOMParser -Vendor1:contactName=Samuel King 
+18:16:26.276 INFO  DOMParser -Vendor1:email=email1@email.com 
+18:16:26.276 INFO  DOMParser -Vendor1:phone=800-000-0002 
+18:16:26.277 INFO  DOMParser -Vendor1:Address=
+              1256 
+              2nd street 
+               
+              Seattle >
+              WA >
+              98001 >
+              USA >
+        
+18:16:26.277 INFO  DOMParser -Vendor2:vendorName=Nike.com 
+18:16:26.277 INFO  DOMParser -Vendor2:contactName= 
+18:16:26.277 INFO  DOMParser -Vendor2:email=email@email.com 
+18:16:26.277 INFO  DOMParser -Vendor2:phone=800-000-0001 
+18:16:26.277 INFO  DOMParser -Vendor2:Address=
+              1 
+              MLK street 
+               
+              Sacramento >
+              WA >
+              97001 >
+              USA >
+        
+18:16:26.278 INFO  DOMParser -Vendor3:vendorName=Hamilton store 
+18:16:26.278 INFO  DOMParser -Vendor3:contactName= 
+18:16:26.278 INFO  DOMParser -Vendor3:email=email2@email.com 
+18:16:26.278 INFO  DOMParser -Vendor3:phone=800-011-0001 
+18:16:26.278 INFO  DOMParser -Vendor3:Address=
+              56432 
+              swiss Ave 
+              Apt 3 
+              Asmara >
+               >
+              27Z87 >
+              Eritrea >
+       
+18:32:15.694 INFO  DOMParser -Vendor1:[#text: 
+        ]=Lucky store 
+18:32:15.696 INFO  DOMParser -Vendor1:[#text: 
+        ]=Samuel King 
+18:32:15.696 INFO  DOMParser -Vendor1:[#text: 
+        ]=email1@email.com 
+18:32:15.697 INFO  DOMParser -Vendor1:[#text: 
+        ]=800-000-0002 
+18:32:15.697 INFO  DOMParser -Vendor1:[#text: 
+    ]=
+              1256 
+              2nd street 
+               
+              Seattle >
+              WA >
+              98001 >
+              USA >
+        
+18:32:15.697 INFO  DOMParser -Vendor2:[#text: 
+       ]=Nike.com 
+18:32:15.697 INFO  DOMParser -Vendor2:[#text: 
+       ]= 
+18:32:15.698 INFO  DOMParser -Vendor2:[#text: 
+       ]=email@email.com 
+18:32:15.698 INFO  DOMParser -Vendor2:[#text: 
+       ]=800-000-0001 
+18:32:15.698 INFO  DOMParser -Vendor2:[#text: 
+   ]=
+              1 
+              MLK street 
+               
+              Sacramento >
+              WA >
+              97001 >
+              USA >
+        
+18:32:15.698 INFO  DOMParser -Vendor3:[#text: 
+       ]=Hamilton store 
+18:32:15.698 INFO  DOMParser -Vendor3:[#text: 
+       ]= 
+18:32:15.699 INFO  DOMParser -Vendor3:[#text: 
+       ]=email2@email.com 
+18:32:15.699 INFO  DOMParser -Vendor3:[#text: 
+       ]=800-011-0001 
+18:32:15.699 INFO  DOMParser -Vendor3:[#text: 
+    ]=
+              56432 
+              swiss Ave 
+              Apt 3 
+              Asmara >
+               >
+              27Z87 >
+              Eritrea >
+       
+18:36:33.694 INFO  DOMParser -Vendor1:#text=Lucky store 
+18:36:33.697 INFO  DOMParser -Vendor1:#text=Samuel King 
+18:36:33.697 INFO  DOMParser -Vendor1:#text=email1@email.com 
+18:36:33.697 INFO  DOMParser -Vendor1:#text=800-000-0002 
+18:36:33.698 INFO  DOMParser -Vendor1:#text=
+              1256 
+              2nd street 
+               
+              Seattle >
+              WA >
+              98001 >
+              USA >
+        
+18:36:33.698 INFO  DOMParser -Vendor2:#text=Nike.com 
+18:36:33.698 INFO  DOMParser -Vendor2:#text= 
+18:36:33.698 INFO  DOMParser -Vendor2:#text=email@email.com 
+18:36:33.698 INFO  DOMParser -Vendor2:#text=800-000-0001 
+18:36:33.699 INFO  DOMParser -Vendor2:#text=
+              1 
+              MLK street 
+               
+              Sacramento >
+              WA >
+              97001 >
+              USA >
+        
+18:36:33.699 INFO  DOMParser -Vendor3:#text=Hamilton store 
+18:36:33.699 INFO  DOMParser -Vendor3:#text= 
+18:36:33.700 INFO  DOMParser -Vendor3:#text=email2@email.com 
+18:36:33.700 INFO  DOMParser -Vendor3:#text=800-011-0001 
+18:36:33.700 INFO  DOMParser -Vendor3:#text=
+              56432 
+              swiss Ave 
+              Apt 3 
+              Asmara >
+               >
+              27Z87 >
+              Eritrea >
+       

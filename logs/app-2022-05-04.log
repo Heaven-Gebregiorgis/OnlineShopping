@@ -1,0 +1,4 @@
+16:02:44.523 INFO  ConnectionTest -database URL jdbc:mysql://52.59.193.212:3306/?user=root/heaven_gebregiorgis
+16:02:44.526 INFO  ConnectionTest -database user root
+16:03:54.670 INFO  ConnectionTest -database URL null
+16:03:54.672 INFO  ConnectionTest -database user null

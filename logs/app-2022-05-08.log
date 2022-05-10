@@ -1,0 +1,60 @@
+09:26:29.139 INFO  ConnectionPool -connection succesful!
+09:26:29.153 ERROR AddressDAO -Failed to retrieve address
+09:26:29.154 ERROR AddressDAO -Failed to delete the address
+09:26:29.156 ERROR CartDAO -Failed to delete the cart
+09:29:28.345 INFO  ConnectionPool -connection succesful!
+09:29:28.349 ERROR AddressDAO -Failed to retrieve address
+09:29:28.350 ERROR AddressDAO -Failed to delete the address
+09:29:28.352 ERROR CartDAO -Failed to delete the cart
+09:35:03.604 INFO  ConnectionPool -connection succesful!
+09:35:07.734 ERROR AddressDAO -Failed to retrieve address
+09:35:09.537 ERROR AddressDAO -Failed to delete the address
+09:35:11.239 ERROR CartDAO -Failed to delete the cart
+09:35:12.662 INFO  ConnectionPool -connection succesful!
+09:35:16.870 ERROR AddressDAO -Failed to retrieve address
+09:35:18.592 ERROR AddressDAO -Failed to delete the address
+09:35:20.305 ERROR CartDAO -Failed to delete the cart
+09:38:53.431 INFO  ConnectionPool -connection succesful!
+09:38:54.889 ERROR AddressDAO -Failed to retrieve address
+09:38:55.685 ERROR AddressDAO -Failed to delete the address
+09:38:56.469 ERROR CartDAO -Failed to delete the cart
+09:44:59.652 INFO  ConnectionPool -connection succesful!
+09:45:03.664 ERROR AddressDAO -Failed to retrieve address
+09:45:05.378 ERROR AddressDAO -Failed to delete the address
+09:45:07.183 ERROR CartDAO -Failed to delete the cart
+09:46:46.019 INFO  ConnectionPool -connection succesful!
+09:46:49.841 ERROR AddressDAO -Failed to retrieve address
+09:46:51.642 ERROR AddressDAO -Failed to delete the address
+09:46:53.608 ERROR CartDAO -Failed to delete the cart
+09:48:03.347 INFO  ConnectionPool -connection succesful!
+09:48:07.511 ERROR CartDAO -Failed to delete the cart
+09:52:37.607 INFO  ConnectionPool -connection succesful!
+09:52:42.368 ERROR CartDAO -Failed to retrieve cart
+09:54:18.115 INFO  ConnectionPool -connection succesful!
+09:54:22.335 ERROR CartDAO -Failed to retrieve cart
+09:55:08.234 INFO  ConnectionPool -connection succesful!
+09:55:12.414 ERROR CartDAO -Failed to retrieve cart
+09:59:11.654 INFO  ConnectionPool -connection succesful!
+10:01:23.072 INFO  ConnectionPool -connection succesful!
+10:01:27.302 ERROR TransactionDAO -Failed to delete the transaction
+10:05:50.642 INFO  ConnectionPool -connection succesful!
+10:05:55.059 ERROR TransactionDAO -Failed to delete the transaction
+10:11:14.262 INFO  ConnectionPool -connection succesful!
+10:11:18.109 ERROR AddressDAO -Failed to retrieve address
+10:11:19.820 ERROR AddressDAO -Failed to retrieve address
+10:11:21.506 ERROR AddressDAO -Failed to delete the address
+10:13:06.926 INFO  ConnectionPool -connection succesful!
+10:13:10.865 ERROR AddressDAO -Failed to retrieve address
+10:13:14.713 ERROR AddressDAO -Failed to delete the address
+10:22:42.606 INFO  ConnectionPool -connection succesful!
+10:22:47.182 ERROR AddressDAO -Failed to retrieve address
+10:22:51.036 ERROR AddressDAO -Failed to delete the address
+10:22:52.920 ERROR CartDAO -Failed to retrieve cart
+10:22:54.793 ERROR TransactionDAO -Failed to delete the transaction
+10:23:30.854 INFO  ConnectionPool -connection succesful!
+10:23:34.711 ERROR AddressDAO -Failed to retrieve address
+10:23:38.477 ERROR AddressDAO -Failed to delete the address
+10:23:40.335 ERROR CartDAO -Failed to retrieve cart
+10:23:42.326 ERROR TransactionDAO -Failed to delete the transaction
+10:29:11.587 INFO  ConnectionPool -connection succesful!
+10:29:15.656 ERROR AddressDAO -Failed to retrieve address

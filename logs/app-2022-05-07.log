@@ -1,0 +1,49 @@
+14:19:38.028 INFO  ConnectionTest -database URL jdbc:mysql://52.59.193.212:3306/?user=root/heaven_gebregiorgis
+14:19:38.040 INFO  ConnectionTest -database user root
+14:24:44.959 ERROR AddressDAO -Failed to retrieve user
+14:32:06.959 ERROR AddressDAO -Failed to retrieve user
+14:32:06.962 ERROR AddressDAO -Failed to retrieve address
+14:35:06.476 ERROR AddressDAO -Failed to retrieve address
+14:35:06.487 ERROR AddressDAO -Failed to retrieve address
+14:35:06.489 ERROR AddressDAO -Failed to delete the address
+14:40:08.322 ERROR AddressDAO -Failed to retrieve address
+14:40:08.325 ERROR AddressDAO -Failed to retrieve address
+14:40:08.326 ERROR AddressDAO -Failed to delete the address
+14:42:56.957 ERROR AddressDAO -Failed to retrieve address
+14:42:56.963 ERROR AddressDAO -Failed to retrieve address
+14:42:56.964 ERROR AddressDAO -Failed to delete the address
+14:45:50.265 ERROR AddressDAO -Failed to retrieve address
+14:45:50.268 ERROR AddressDAO -Failed to retrieve address
+14:45:50.269 ERROR AddressDAO -Failed to delete the address
+21:11:53.500 ERROR AddressDAO -Failed to retrieve address
+21:11:53.505 ERROR AddressDAO -Failed to retrieve address
+21:11:53.506 ERROR AddressDAO -Failed to delete the address
+21:19:26.864 ERROR AddressDAO -Failed to retrieve address
+21:19:26.871 ERROR AddressDAO -Failed to retrieve address
+21:19:26.872 ERROR AddressDAO -Failed to delete the address
+21:23:47.446 ERROR AddressDAO -Failed to retrieve address
+21:23:47.450 ERROR AddressDAO -Failed to retrieve address
+21:23:47.451 ERROR AddressDAO -Failed to delete the address
+21:42:54.577 ERROR AddressDAO -Failed to retrieve address
+21:42:54.581 ERROR AddressDAO -Failed to retrieve address
+21:42:54.582 ERROR AddressDAO -Failed to delete the address
+21:44:11.551 ERROR AddressDAO -Failed to delete the address
+21:44:54.183 ERROR AddressDAO -Failed to delete the address
+22:40:03.552 ERROR AddressDAO -Failed to delete the address
+22:42:35.010 INFO  ConnectionPool -connection succesful!
+22:42:35.016 ERROR AddressDAO -Failed to retrieve address
+22:46:27.902 INFO  ConnectionPool -connection succesful!
+22:46:27.908 ERROR AddressDAO -Failed to retrieve address
+22:46:27.909 ERROR AddressDAO -Failed to delete the address
+23:01:54.983 INFO  ConnectionPool -connection succesful!
+23:01:54.989 ERROR AddressDAO -Failed to retrieve address
+23:01:54.990 ERROR AddressDAO -Failed to delete the address
+23:05:47.051 INFO  ConnectionPool -connection succesful!
+23:05:47.058 ERROR AddressDAO -Failed to retrieve address
+23:05:47.060 ERROR AddressDAO -Failed to delete the address
+23:08:52.275 INFO  ConnectionPool -connection succesful!
+23:08:52.281 ERROR AddressDAO -Failed to retrieve address
+23:08:52.282 ERROR AddressDAO -Failed to delete the address
+23:09:13.377 INFO  ConnectionPool -connection succesful!
+23:09:13.389 ERROR AddressDAO -Failed to retrieve address
+23:09:13.390 ERROR AddressDAO -Failed to delete the address
