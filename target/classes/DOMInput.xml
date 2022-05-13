@@ -1,6 +1,6 @@
 <?xml version = "1.0"?>
-<Vendors>
-     <Vendor id = "1">
+<vendors>
+     <vendor id = "1">
         <vendorName>Lucky store </vendorName>
         <contactName>Samuel King </contactName>
         <email>email1@email.com </email>
@@ -14,8 +14,8 @@
               <postalCode>98001 </postalCode>>
               <country>USA </country>>
         </Address>
-    </Vendor>
-    <Vendor id = "2">
+    </vendor>
+    <vendor id = "2">
        <vendorName>Nike.com </vendorName>
        <contactName> </contactName>
        <email>email@email.com </email>
@@ -29,8 +29,8 @@
               <postalCode>97001 </postalCode>>
               <country>USA </country>>
         </Address>
-   </Vendor>
-   <Vendor id = "3">
+   </vendor>
+   <vendor id = "3">
        <vendorName>Hamilton store </vendorName>
        <contactName> </contactName>
        <email>email2@email.com </email>
@@ -44,5 +44,5 @@
               <postalCode>27Z87 </postalCode>>
               <country>Eritrea </country>>
        </Address>
-    </Vendor>
-</Vendors>
+    </vendor>
+</vendors>
