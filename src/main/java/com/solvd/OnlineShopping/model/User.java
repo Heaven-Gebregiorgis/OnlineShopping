@@ -1,9 +1,20 @@
 package com.solvd.OnlineShopping.model;
 
-import java.sql.Date;
 
+import java.util.Date;
+import java.util.List;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import com.solvd.OnlineShopping.jaxb.DateAdapter;
+
+
+@XmlRootElement(name = "user")
 public class User {
 
+	
 	private int id;
 	private String lastName;
 	private String firstName;
@@ -11,13 +22,14 @@ public class User {
 	private String email;
 	private Date registeredOn;
 	private Date lastLogin;
-	private CommunicationPreference communicationPreferenceId;
-	private Setting settingId;
+	private CommunicationPreference communicationPreference;
+	private Setting setting;
+	private List<Order> orders;
 	
 	
 	public User() {}
 	public User(int id, String lastName, String firstName, Date birthday, String email, Date registeredOn,
-			Date lastLogin, CommunicationPreference communicationPreferenceId, Setting settingId) {
+			Date lastLogin, CommunicationPreference communicationPreference, Setting setting) {
 		super();
 		this.id = id;
 		this.lastName = lastName;
@@ -26,11 +38,11 @@ public class User {
 		this.email = email;
 		this.registeredOn = registeredOn;
 		this.lastLogin = lastLogin;
-		this.communicationPreferenceId = communicationPreferenceId;
-		this.settingId = settingId;
+		this.communicationPreference = communicationPreference;
+		this.setting = setting;
 	}
 
-
+	@XmlAttribute(name = "id")
 	public int getId() {
 		return id;
 	}
@@ -40,7 +52,7 @@ public class User {
 		this.id = id;
 	}
 
-
+	@XmlElement(name = "lname")
 	public String getLastName() {
 		return lastName;
 	}
@@ -50,7 +62,7 @@ public class User {
 		this.lastName = lastName;
 	}
 
-
+	@XmlElement(name = "fname")
 	public String getFirstName() {
 		return firstName;
 	}
@@ -60,7 +72,8 @@ public class User {
 		this.firstName = firstName;
 	}
 
-
+	@XmlJavaTypeAdapter(DateAdapter.class)
+	@XmlElement(name = "bday")
 	public Date getBirthday() {
 		return birthday;
 	}
@@ -70,7 +83,7 @@ public class User {
 		this.birthday = birthday;
 	}
 
-
+	@XmlElement(name = "email")
 	public String getEmail() {
 		return email;
 	}
@@ -80,7 +93,8 @@ public class User {
 		this.email = email;
 	}
 
-
+	@XmlJavaTypeAdapter(DateAdapter.class)
+	@XmlElement(name = "registeredon")
 	public Date getRegisteredOn() {
 		return registeredOn;
 	}
@@ -90,7 +104,7 @@ public class User {
 		this.registeredOn = registeredOn;
 	}
 
-
+	@XmlElement(name = "lastlogin")
 	public Date getLastLogin() {
 		return lastLogin;
 	}
@@ -100,24 +114,32 @@ public class User {
 		this.lastLogin = lastLogin;
 	}
 
-
-	public CommunicationPreference getCommunicationPreferenceId() {
-		return communicationPreferenceId;
+	@XmlElement(name = "compreference")
+	public CommunicationPreference getCommunicationPreference() {
+		return communicationPreference;
 	}
 
 
-	public void setCommunicationPreferenceId(CommunicationPreference communicationPreferenceId) {
-		this.communicationPreferenceId = communicationPreferenceId;
+	public void setCommunicationPreference(CommunicationPreference communicationPreference) {
+		this.communicationPreference = communicationPreference;
+	}
+
+	@XmlElement(name = "setting")
+	public Setting getSetting() {
+		return setting;
 	}
 
 
-	public Setting getSettingId() {
-		return settingId;
+	public void setSetting(Setting setting) {
+		this.setting = setting;
 	}
-
-
-	public void setSettingId(Setting settingId) {
-		this.settingId = settingId;
+	@XmlElementWrapper(name = "orders")
+	@XmlElement(name = "order", type = Order.class)
+	public List<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
 	}
 	
 	

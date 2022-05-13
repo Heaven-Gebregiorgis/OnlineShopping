@@ -1,5 +1,6 @@
 package com.solvd.OnlineShopping.dao.jdbcmysqlimpl;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,8 +10,8 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.OnlineShopping.connectionPackage.ConnectionPool;
-import com.solvd.OnlineShopping.dao.interfaces.IProductDAO;
+import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
+import com.solvd.OnlineShopping.dao.IProductDAO;
 import com.solvd.OnlineShopping.model.Category;
 import com.solvd.OnlineShopping.model.Product;
 
@@ -20,15 +21,23 @@ import com.solvd.OnlineShopping.model.enums.ProductStatus;
 public class ProductDAO implements IProductDAO {
 	
 	private static final Logger LOGGER = LogManager.getLogger(ProductDAO.class);
+	private static final String GETENTITYSQL= "SELECT * FROM Heaven_Gebregiorgis.Products WHERE id=?";
+	private static final String SAVEENTITYSQL= "Insert into Heaven_Gebregiorgis.Products values (?,?,?,?,?,?,?)";
+	private static final String UPDATEENTITYSQL= "Update Products set 'product_name'=?, 'brand'=?, 'size'=?, 'status'=?,'category'=?, 'vendor'=? Where ('id' = ?)";
+	private static final String REMOVEENTITYSQL= "Delete from Heaven_Gebregiorgis.Products Where id = ?";
+	private static final String GETPRODUCTSBYBRANDSQL= "SELECT * FROM Heaven_Gebregiorgis.Products WHERE brand = ?";
 
 	@Override
 	public Product getEntityById(int id) {
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		ResultSet rs = null;
 		Product product = new Product();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Products where id = ?");
+	
+		try (PreparedStatement pr = con.prepareStatement(GETENTITYSQL)){
 		pr.setInt(1, id);
 		
-		ResultSet rs = pr.executeQuery();
+		rs = pr.executeQuery();
 		if(rs.next()) {
 			product.setId(rs.getInt(1));
 			product.setProductName(rs.getString(2));
@@ -43,13 +52,30 @@ public class ProductDAO implements IProductDAO {
 		catch (SQLException e) {
 			LOGGER.error("Failed to retrieve vendor");
 		}
+		finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            }
+            catch (SQLException e) {
+                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+            }
+            try {
+				pool.returnConnection(con);
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage());
+			}
+        }
 		return product;
 	}
 
 	@Override
 	public void saveEntity(Product entity) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Insert into Vendors values (?,?,?,?,?,?,?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		
+		try(PreparedStatement pr = con.prepareStatement(SAVEENTITYSQL);) {
 			pr.setInt(1, entity.getId());
 			pr.setString(2, entity.getProductName());
 			pr.setString(3, entity.getBrand());
@@ -62,13 +88,22 @@ public class ProductDAO implements IProductDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to save product");
 		}
+		  finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+	        }
 		
 	}
 
 	@Override
 	public void updateEntity(Product entity) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Update Products set 'product_name'=?, 'brand'=?, 'size'=?, 'status'=?,'category'=?, 'vendor'=? Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		
+		try(PreparedStatement pr = con.prepareStatement(UPDATEENTITYSQL)) {
 
 			
 			pr.setString(2, entity.getProductName());
@@ -82,28 +117,46 @@ public class ProductDAO implements IProductDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to update product");
 		}
+		  finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 		
 	}
 
 	@Override
 	public void removeEntity(int id) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Delete from Products Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		try(PreparedStatement pr = con.prepareStatement(REMOVEENTITYSQL)) {
 			pr.setInt(1, id);
 
 			pr.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error("Failed to delete the product");
 		}
+		 finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 		
 	}
 
 	@Override
 	public List<Product> getProductsByBrand(String brand) {
 		List<Product> list= new ArrayList<Product>();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Products where brand = ?");
-		ResultSet rs = pr.executeQuery();
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		ResultSet rs = null;
+		try(PreparedStatement pr = con.prepareStatement(GETPRODUCTSBYBRANDSQL)) {
+		
+		rs = pr.executeQuery();
 		
 		while(rs.next()) {
 			Product product = new Product();
@@ -119,6 +172,21 @@ public class ProductDAO implements IProductDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to retrieve product");
 		}
+		finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            }
+            catch (SQLException e) {
+                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+            }
+            try {
+				pool.returnConnection(con);
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage());
+			}
+        }
 		return list;
 	}
 

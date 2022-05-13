@@ -1,5 +1,6 @@
 package com.solvd.OnlineShopping.dao.jdbcmysqlimpl;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,8 +10,8 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.solvd.OnlineShopping.connectionPackage.ConnectionPool;
-import com.solvd.OnlineShopping.dao.interfaces.IFeedbackDAO;
+import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
+import com.solvd.OnlineShopping.dao.IFeedbackDAO;
 import com.solvd.OnlineShopping.model.Feedback;
 import com.solvd.OnlineShopping.model.Product;
 import com.solvd.OnlineShopping.model.User;
@@ -19,15 +20,22 @@ import com.solvd.OnlineShopping.model.User;
 public class FeedbackDAO implements IFeedbackDAO {
 
 	private static final Logger LOGGER = LogManager.getLogger(FeedbackDAO.class);
+	private static final String GETENTITYSQL= "SELECT * FROM Heaven_Gebregiorgis.Feedbacks WHERE id=?";
+	private static final String SAVEENTITYSQL= "Insert into Heaven_Gebregiorgis.Feedbacks values (?,?,?,?,?)";
+	private static final String UPDATEENTITYSQL= "Update Heaven_Gebregiorgis.Feedbacks set 'last_name'=?, 'first_name'=?, 'birthday'=?, 'email'=?,'communication_preference_id'=?, 'setting_id'=? Where ('id' = ?)";
+	private static final String REMOVEENTITYSQL= "Delete from Heaven_Gebregiorgis.Feedbacks Where id = ?";
+	private static final String GETPRODUCTSQL= "SELECT * FROM Heaven_Gebregiorgis.Feedbacks WHERE product_id=?";
 	
 	@Override
 	public Feedback getEntityById(int id) {
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		ResultSet rs = null;
 		Feedback fb = new Feedback();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Feedbacks where id = ?");
+		try (PreparedStatement pr = con.prepareStatement(GETENTITYSQL)){
 		pr.setInt(1, id);
 		
-		ResultSet rs = pr.executeQuery();
+		rs = pr.executeQuery();
 		if(rs.next()) {
 			fb.setId(rs.getInt(1));
 			fb.setUser((User)rs.getObject(2));
@@ -40,13 +48,30 @@ public class FeedbackDAO implements IFeedbackDAO {
 		catch (SQLException e) {
 			LOGGER.error("Failed to retrieve feedback");
 		}
+	     finally {
+	            try {
+	                if (rs != null) {
+	                    rs.close();
+	                }
+	            }
+	            catch (SQLException e) {
+	                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+	            }
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+	        }
 		return fb;
 	}
 
 	@Override
 	public void saveEntity(Feedback entity) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Insert into Feedbacks values (?,?,?,?,?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		
+		try(PreparedStatement pr = con.prepareStatement(SAVEENTITYSQL);) {
 			pr.setInt(1, entity.getId());
 			pr.setObject(2, entity.getUser());
 			pr.setObject(3, entity.getProduct());
@@ -57,12 +82,20 @@ public class FeedbackDAO implements IFeedbackDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to save feedback");
 		}
+		finally {
+            try {
+				pool.returnConnection(con);
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage());
+			}
+        }
 	}
 
 	@Override
 	public void updateEntity(Feedback entity) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Update Users set 'last_name'=?, 'first_name'=?, 'birthday'=?, 'email'=?,'communication_preference_id'=?, 'setting_id'=? Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		try(PreparedStatement pr = con.prepareStatement(UPDATEENTITYSQL)) {
 
 			
 			pr.setObject(2, entity.getUser());
@@ -74,28 +107,47 @@ public class FeedbackDAO implements IFeedbackDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to update feedback");
 		}
+		  finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 		
 	}
 
 	@Override
 	public void removeEntity(int id) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Delete from Feedbacks Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		try(PreparedStatement pr = con.prepareStatement(REMOVEENTITYSQL)) {
 			pr.setInt(1, id);
 
 			pr.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error("Failed to delete the user");
 		}
+		 finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 		
 	}
 
 	@Override
-	public List<Feedback> getFeedbacksByProduct(Product p) {
+	public List<Feedback> getFeedbacksByProductId(int id) {
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		ResultSet rs = null;
 		List<Feedback> list= new ArrayList<Feedback>();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Feedbacks where product_id = ?");
-		ResultSet rs = pr.executeQuery();
+		
+		try(PreparedStatement pr = con.prepareStatement(GETPRODUCTSQL)){
+			
+		rs = pr.executeQuery();
 		
 		Feedback fb = new Feedback();
 		while(rs.next()) {
@@ -110,6 +162,21 @@ public class FeedbackDAO implements IFeedbackDAO {
 		} catch (SQLException e) {
 			LOGGER.error("Failed to retrieve feedbacks");
 		}
+		finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            }
+            catch (SQLException e) {
+                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+            }
+            try {
+				pool.returnConnection(con);
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage());
+			}
+        }
 		return list;
 	}
 

@@ -1,14 +1,12 @@
 package com.solvd.OnlineShopping.dao.jdbcmysqlimpl;
 
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+
+import java.util.Date;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-import com.solvd.OnlineShopping.connectionPackage.ConnectionPool;
-import com.solvd.OnlineShopping.dao.interfaces.IUserDAO;
+import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
+import com.solvd.OnlineShopping.dao.IUserDAO;
 import com.solvd.OnlineShopping.model.CommunicationPreference;
 import com.solvd.OnlineShopping.model.Setting;
 import com.solvd.OnlineShopping.model.User;
@@ -18,16 +16,21 @@ import org.apache.logging.log4j.Logger;
 public class UserDAO implements IUserDAO {
 
 	private static final Logger LOGGER = LogManager.getLogger(UserDAO.class);
+	private static final String GETENTITYSQL= "SELECT * FROM Heaven_Gebregiorgis.Users WHERE id=?";
+	private static final String SAVEENTITYSQL= "Insert into Heaven_Gebregiorgis.Addresses values (?,?,?,?,?,?,?,?,?)";
+	private static final String UPDATEENTITYSQL= "Update Heaven_Gebregiorgis.Users set 'last_name'=?, 'first_name'=?, 'birthday'=?, 'email'=?,'communication_preference_id'=?, 'setting_id'=? Where ('id' = ?)";
+	private static final String REMOVEENTITYSQL= "Delete from Heaven_Gebregiorgis.Users Where id = ?";	
 	
 	@Override
 	public User getEntityById(int id) {
-		
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
 		User user = new User();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Users where id = ?");
+		ResultSet rs = null;
+		try (PreparedStatement pr = con.prepareStatement(GETENTITYSQL)){
 		pr.setInt(1, id);
 		
-		ResultSet rs = pr.executeQuery();
+		rs = pr.executeQuery();
 		if(rs.next()) {
 			user.setId(rs.getInt(1));
 			user.setLastName(rs.getString(2));
@@ -36,78 +39,121 @@ public class UserDAO implements IUserDAO {
 			user.setEmail(rs.getString(5));
 			user.setRegisteredOn(rs.getDate(6));
 			user.setLastLogin(rs.getDate(7));
-			user.setCommunicationPreferenceId((CommunicationPreference) rs.getObject(8));
-			user.setSettingId((Setting) rs.getObject(9));
+			user.setCommunicationPreference((CommunicationPreference) rs.getObject(8));
+			user.setSetting((Setting) rs.getObject(9));
 		
 		}
 		}
 		catch (SQLException e) {
 			LOGGER.error("Failed to retrieve user");
 		}
+	      finally {
+	            try {
+	                if (rs != null) {
+	                    rs.close();
+	                }
+	            }
+	            catch (SQLException e) {
+	                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+	            }
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+	        }
 		return user;
 		
 	}
 
 	@Override
 	public void saveEntity(User entity) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Insert into Users values (?,?,?,?,?,?,?,?,?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		
+		try(PreparedStatement pr = con.prepareStatement(SAVEENTITYSQL);) {
 			pr.setInt(1, entity.getId());
 			pr.setString(2, entity.getLastName());
 			pr.setString(3, entity.getFirstName());
-			pr.setDate(4, entity.getBirthday());
+			pr.setDate(4, (java.sql.Date) entity.getBirthday());
 			pr.setString(5, entity.getEmail());
-			pr.setDate(6, entity.getRegisteredOn());
-			pr.setDate(7, entity.getLastLogin());
-			pr.setObject(8, entity.getCommunicationPreferenceId());
-			pr.setObject(9, entity.getSettingId());
+			pr.setDate(6, (java.sql.Date) entity.getRegisteredOn());
+			pr.setDate(7, (java.sql.Date) entity.getLastLogin());
+			pr.setObject(8, entity.getCommunicationPreference());
+			pr.setObject(9, entity.getSetting());
 			pr.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error("Failed to save User");
 		}
+		  finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+	        }
+	
 		
 	}
 
 	@Override
 	public void updateEntity(User entity) {
 		
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Update Users set 'last_name'=?, 'first_name'=?, 'birthday'=?, 'email'=?,'communication_preference_id'=?, 'setting_id'=? Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		try(PreparedStatement pr = con.prepareStatement(UPDATEENTITYSQL)) {
 
 			
 			pr.setString(2, entity.getLastName());
 			pr.setString(3, entity.getFirstName());
-			pr.setDate(4, entity.getBirthday());
+			pr.setDate(4, (java.sql.Date) entity.getBirthday());
 			pr.setString(5, entity.getEmail());
-			pr.setObject(8, entity.getCommunicationPreferenceId());
-			pr.setObject(9, entity.getSettingId());
+			pr.setObject(8, entity.getCommunicationPreference());
+			pr.setObject(9, entity.getSetting());
 			
 			pr.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error("Failed to update User");
 		}
+		 finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 	}
 	
 
 	@Override
 	public void removeEntity(int id) {
-		try {
-			PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Delete from Users Where ('id' = ?)");
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
+		try(PreparedStatement pr = con.prepareStatement(REMOVEENTITYSQL)) {
 			pr.setInt(1, id);
 
 			pr.executeUpdate();
 		} catch (SQLException e) {
 			LOGGER.error("Failed to delete the user");
 		}
+		  finally {
+	            try {
+					pool.returnConnection(con);
+				} catch (SQLException e) {
+					LOGGER.error(e.getMessage());
+				}
+		  }
 		
 	}
 
 	@Override
 	public List<User> getUsersByDate(Date d) {
+		MySQLConnectionPool pool = MySQLConnectionPool.getInstance();
+		Connection con = pool.getAvailableConnection();
 		List<User> list= new ArrayList<User>();
-		try {
-		PreparedStatement pr = ConnectionPool.getDataSource().getConnection().prepareStatement("Select * from Users where registered_on = ?");
-		ResultSet rs = pr.executeQuery();
+		ResultSet rs = null;
+		try(PreparedStatement pr = con.prepareStatement("Select * from Heaven_Gebregiorgis.Addresses where city = ?")) {
+		rs = pr.executeQuery();
 		
 		while(rs.next()) {
 			User user = new User();
@@ -118,14 +164,30 @@ public class UserDAO implements IUserDAO {
 			user.setEmail(rs.getString(5));
 			user.setRegisteredOn(rs.getDate(6));
 			user.setLastLogin(rs.getDate(7));
-			user.setCommunicationPreferenceId((CommunicationPreference) rs.getObject(8));
-			user.setSettingId((Setting) rs.getObject(9));
+			user.setCommunicationPreference((CommunicationPreference) rs.getObject(8));
+			user.setSetting((Setting) rs.getObject(9));
 			list.add(user);
 		}
 		} catch (SQLException e) {
 			LOGGER.error("Failed to retrieve user");
 		}
+		finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+            }
+            catch (SQLException e) {
+                LOGGER.error("Failed to close ResultSet: " + e.getSQLState());
+            }
+            try {
+				pool.returnConnection(con);
+			} catch (SQLException e) {
+				LOGGER.error(e.getMessage());
+			}
+        }
 		return list;
+	
 	}
 
 }

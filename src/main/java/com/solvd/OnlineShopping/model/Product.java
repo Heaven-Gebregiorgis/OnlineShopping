@@ -1,5 +1,7 @@
 package com.solvd.OnlineShopping.model;
 
+import java.util.List;
+
 import com.solvd.OnlineShopping.model.enums.ProductStatus;
 
 public class Product {
@@ -11,6 +13,7 @@ public class Product {
 	private ProductStatus status;
 	private Category category;
 	private Vendor vendor;
+	private List<Feedback> feedbacks;
 	
 	
 	
@@ -67,6 +70,12 @@ public class Product {
 	}
 	public void setVendor(Vendor vendor) {
 		this.vendor = vendor;
+	}
+	public List<Feedback> getFeedbacks() {
+		return feedbacks;
+	}
+	public void setFeedbacks(List<Feedback> feedbacks) {
+		this.feedbacks = feedbacks;
 	}
 	
 	
