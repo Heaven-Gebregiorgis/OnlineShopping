@@ -1,0 +1,4 @@
+13:48:12.658 INFO  ConnectionPool -connection succesful!
+13:48:17.021 ERROR AddressDAO -Failed to retrieve address
+14:02:26.521 ERROR AddressDAO -Failed to delete the address
+14:03:56.189 ERROR AddressDAO -Failed to delete the addressCannot delete or update a parent row: a foreign key constraint fails (`Heaven_Gebregiorgis`.`Deliveries`, CONSTRAINT `fk_Users_has_Addresses_Addresses1` FOREIGN KEY (`address_id`) REFERENCES `Addresses` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION)
