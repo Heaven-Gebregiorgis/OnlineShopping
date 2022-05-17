@@ -46,7 +46,7 @@ public class JaxbRunner {
 
 			LOGGER.info("id: " + u2.getId());
 			LOGGER.info("First name: " + u2.getLastName());
-			LOGGER.info("First name: " + u2.getFirstName());
+			LOGGER.info("Last name: " + u2.getFirstName());
 			LOGGER.info("Birth Date: " + u2.getBirthday());
 			LOGGER.info("Email: " + u2.getEmail());
 			LOGGER.info("Registered on: " + u2.getRegisteredOn());

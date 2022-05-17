@@ -34,6 +34,8 @@ public class MySQLConnectionPool {
 	private int connNum = 0;
 	Stack<Connection> freePool = new Stack<>();
 	Set<Connection> occupiedPool = new HashSet<>();
+	
+	private MySQLConnectionPool() {}
 
 	  public static MySQLConnectionPool getInstance() {
 	        return INSTANCE;
