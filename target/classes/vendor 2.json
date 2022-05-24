@@ -1,0 +1,40 @@
+[
+    {
+        "id": 1, 
+        "vendorName": "Lucky store",
+        "contactName": "Samuel King",
+        "email": "email1@email.com",
+        "phone": "800-000-0002",
+        "establishedDate": "08/14/1967",
+        "address":{
+            "id": 2,
+            "houseNumber": 1256,
+            "street": "2nd street",
+            "apartmentNumber": null,
+            "city": "Sacramento",
+            "state": "CA",
+            "zipCode": "97001",
+            "country": "USA"
+        
+        }
+    },
+        {
+        "id": 2,
+        "vendorName": "Nike.com",
+        "contactName": null,
+        "email": "email@email.com",
+        "phone": "800-000-0001",
+             "establishedDate": "11/06/1951",
+        "address":{
+            "id": 4,
+            "houseNumber": 786,
+            "street": "some street",
+            "apartmentNumber": null,
+            "city": "Istanbul",
+            "state": null,
+            "zipCode": "98001",
+            "country": "Turkey"
+        
+        }
+    }
+]
