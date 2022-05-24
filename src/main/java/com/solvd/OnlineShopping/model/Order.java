@@ -62,6 +62,11 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
+	@Override
+	public String toString() {
+		return "Order [id=" + id + ", orderDetail=" + orderDetail + ", totalPrice=" + totalPrice + ", placedAt="
+				+ placedAt + ", confirmationNumber=" + confirmationNumber + ", user=" + user + "]";
+	}
 	
 	
 	

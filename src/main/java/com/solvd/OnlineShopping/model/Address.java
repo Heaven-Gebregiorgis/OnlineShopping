@@ -1,14 +1,24 @@
 package com.solvd.OnlineShopping.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Address {
 
+	@JsonProperty
 	private int id;
+	@JsonProperty
 	private int houseNumber;
+	@JsonProperty
 	private String street;
+	@JsonProperty
 	private String apartmentNumber;
+	@JsonProperty
 	private String city;
+	@JsonProperty
 	private String state;
+	@JsonProperty("zipCode")
 	private String postalCode;
+	@JsonProperty
 	private String country;
 	
 	
@@ -73,6 +83,12 @@ public class Address {
 	}
 	public void setCountry(String country) {
 		this.country = country;
+	}
+	@Override
+	public String toString() {
+		return "Address [id=" + id + ", houseNumber=" + houseNumber + ", street=" + street + ", apartmentNumber="
+				+ apartmentNumber + ", city=" + city + ", state=" + state + ", postalCode=" + postalCode + ", country="
+				+ country + "]";
 	}
 
 	

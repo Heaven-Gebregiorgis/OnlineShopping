@@ -1,0 +1,18 @@
+{
+  "id" : 5,
+  "vendorName" : "Apple store",
+  "contactName" : "Brandon",
+  "email" : "email1123@email.com",
+  "phone" : "800-000-0002",
+  "address" : {
+    "id" : 6,
+    "houseNumber" : 6754,
+    "street" : "Broadway",
+    "apartmentNumber" : "A11",
+    "city" : "Seattle",
+    "state" : "WA",
+    "country" : "USA",
+    "zipCode" : "98112"
+  },
+  "establishedDate" : "09/21/1996"
+}

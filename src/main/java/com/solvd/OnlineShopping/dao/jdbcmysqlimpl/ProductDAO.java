@@ -190,4 +190,10 @@ public class ProductDAO implements IProductDAO {
 		return list;
 	}
 
+	@Override
+	public List<Product> getItemsInCartByCartId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

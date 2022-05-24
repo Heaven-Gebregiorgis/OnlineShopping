@@ -74,6 +74,11 @@ public class Setting {
 	public void setCameraPermission(Permission cameraPermission) {
 		this.cameraPermission = cameraPermission;
 	}
+	@Override
+	public String toString() {
+		return "Setting [id=" + id + ", location=" + location + ", advertisingPreference=" + advertisingPreference
+				+ ", language=" + language + ", cameraPermission=" + cameraPermission + "]";
+	}
 	
 	
 	

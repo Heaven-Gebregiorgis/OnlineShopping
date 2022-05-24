@@ -10,16 +10,16 @@ import com.solvd.OnlineShopping.dao.jdbcmysqlimpl.TransactionDAO;
 public class Main {
 
 	public static void main(String[] args) {
-	//	IAddressDAO a = new AddressDAO();
+		IAddressDAO a = new AddressDAO();
 		
-		//a.getAddressesByCity("Seattle");
+		a.getAddressesByCity("Seattle");
 		
-		// a.getEntityById(3); 
-		// a.removeEntity(4);
+		 a.getEntityById(3); 
+		 a.removeEntity(4);
 		  
-		 // ICartDAO c = new CartDAO(); c.getEntityById(3);
+		  ICartDAO c = new CartDAO(); c.getEntityById(3);
 		  
-		//  ITransactionDAO t = new TransactionDAO(); t.removeEntity(3);
+		  ITransactionDAO t = new TransactionDAO(); t.removeEntity(3);
 		 
 	}
 

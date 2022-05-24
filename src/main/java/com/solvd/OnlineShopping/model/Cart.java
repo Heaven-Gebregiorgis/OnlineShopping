@@ -2,6 +2,7 @@ package com.solvd.OnlineShopping.model;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.util.List;
 
 public class Cart {
 
@@ -12,6 +13,7 @@ public class Cart {
 	private int totalItems;
 	private BigDecimal totalPrice;
 	private User user;
+	private List<Product> itemsInCart;
 	
 	
 	public Cart() {}
@@ -59,6 +61,12 @@ public class Cart {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+	public List<Product> getItemsInCart() {
+		return itemsInCart;
+	}
+	public void setItemsInCart(List<Product> itemsInCart) {
+		this.itemsInCart = itemsInCart;
 	}
 	
 	

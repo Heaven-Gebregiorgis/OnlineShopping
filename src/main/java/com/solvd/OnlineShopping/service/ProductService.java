@@ -1,5 +1,6 @@
 package com.solvd.OnlineShopping.service;
 
+import com.solvd.OnlineShopping.dao.IFeedbackDAO;
 import com.solvd.OnlineShopping.dao.IProductDAO;
 import com.solvd.OnlineShopping.dao.jdbcmysqlimpl.FeedbackDAO;
 import com.solvd.OnlineShopping.dao.jdbcmysqlimpl.ProductDAO;
@@ -8,7 +9,7 @@ import com.solvd.OnlineShopping.model.Product;
 
 public class ProductService {
 	private IProductDAO productDAO = new ProductDAO();
-	private FeedbackDAO feedbackDAO = new FeedbackDAO();
+	private IFeedbackDAO feedbackDAO = new FeedbackDAO();
 		
 
 	public Product getProductById(int id) {

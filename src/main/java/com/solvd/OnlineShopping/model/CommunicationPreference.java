@@ -52,6 +52,11 @@ public class CommunicationPreference {
 	public void setEmail(Email email) {
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "CommunicationPreference [id=" + id + ", appNotification=" + appNotification + ", text=" + text
+				+ ", email=" + email + "]";
+	}
 	
 	
 	

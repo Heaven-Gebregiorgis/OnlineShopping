@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-import com.solvd.OnlineShopping.jaxb.DateAdapter;
+import com.solvd.OnlineShopping.fileparser.DateAdapter;
 
 
 @XmlRootElement(name = "user")
@@ -140,6 +140,13 @@ public class User {
 	}
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
+	}
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", lastName=" + lastName + ", firstName=" + firstName + ", birthday=" + birthday
+				+ ", email=" + email + ", registeredOn=" + registeredOn + ", lastLogin=" + lastLogin
+				+ ", communicationPreference=" + communicationPreference + ", setting=" + setting + ", orders=" + orders
+				+ "]";
 	}
 	
 	
