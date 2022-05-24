@@ -1,0 +1,18 @@
+19:56:35.590 INFO  JaxbRunner -id: 10
+19:56:35.601 INFO  JaxbRunner -First name: Johnson
+19:56:35.601 INFO  JaxbRunner -First name: Claire
+19:56:35.615 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+19:56:35.615 INFO  JaxbRunner -Email: 1234@gmail.com
+19:56:35.616 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+19:56:35.616 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+19:56:35.617 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@398dada8
+19:56:35.617 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@7cb502c
+19:59:26.912 INFO  JaxbRunner -id: 10
+19:59:26.925 INFO  JaxbRunner -First name: Johnson
+19:59:26.925 INFO  JaxbRunner -First name: Claire
+19:59:26.939 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+19:59:26.939 INFO  JaxbRunner -Email: 1234@gmail.com
+19:59:26.939 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+19:59:26.940 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+19:59:26.940 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@379614be
+19:59:26.940 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@404bbcbd

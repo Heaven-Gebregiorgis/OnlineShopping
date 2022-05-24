@@ -1,0 +1,127 @@
+13:16:01.649 INFO  JaxbRunner -id: 10
+13:16:01.665 INFO  JaxbRunner -First name: Johnson
+13:16:01.665 INFO  JaxbRunner -Last name: Claire
+13:16:01.677 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+13:16:01.677 INFO  JaxbRunner -Email: 1234@gmail.com
+13:16:01.677 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+13:16:01.677 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+13:16:01.677 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@5cdec700
+13:16:01.678 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@6d026701
+13:19:50.673 INFO  JaxbRunner -id: 10
+13:19:50.676 INFO  JaxbRunner -First name: Johnson
+13:19:50.676 INFO  JaxbRunner -Last name: Claire
+13:19:50.685 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+13:19:50.685 INFO  JaxbRunner -Email: 1234@gmail.com
+13:19:50.686 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+13:19:50.686 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+13:19:50.686 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@57ad2aa7
+13:19:50.687 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@5b3f61ff
+14:44:25.014 ERROR JacksonRunner -Cannot deserialize value of type `com.solvd.OnlineShopping.model.Vendor` from Array value (token `JsonToken.START_ARRAY`)
+ at [Source: (File); line: 1, column: 1]
+14:52:40.700 INFO  JacksonRunner -[Lcom.solvd.OnlineShopping.model.Vendor;@a37aefe
+14:54:44.619 INFO  JacksonRunner -[Lcom.solvd.OnlineShopping.model.Vendor;@a37aefe
+14:57:23.159 INFO  JacksonRunner -[com.solvd.OnlineShopping.model.Vendor@28b46423, com.solvd.OnlineShopping.model.Vendor@7fc4780b]
+15:05:50.642 INFO  JacksonRunner -[com.solvd.OnlineShopping.model.Vendor@51c693d, com.solvd.OnlineShopping.model.Vendor@6a57ae10]
+15:20:50.740 INFO  JacksonRunner -[com.solvd.OnlineShopping.model.Vendor@51c693d, com.solvd.OnlineShopping.model.Vendor@6a57ae10]
+15:26:55.777 INFO  JacksonRunner -[com.solvd.OnlineShopping.model.Vendor@766653e6, com.solvd.OnlineShopping.model.Vendor@4e07b95f]
+15:32:15.167 INFO  JacksonRunner -com.solvd.OnlineShopping.model.Vendor@766653e6
+15:32:15.170 INFO  JacksonRunner -com.solvd.OnlineShopping.model.Vendor@6b6776cb
+15:43:54.898 INFO  JacksonRunner -com.solvd.OnlineShopping.model.Vendor@4e07b95f
+15:43:54.900 INFO  JacksonRunner -com.solvd.OnlineShopping.model.Vendor@1863d2fe
+15:57:11.604 INFO  JacksonRunner -Lucky store
+15:57:11.608 INFO  JacksonRunner -Nike.com
+15:57:11.609 INFO  JacksonRunner -1
+15:57:11.609 INFO  JacksonRunner -2
+16:05:26.791 INFO  JacksonRunner -Vendor id: 1
+16:05:26.794 INFO  JacksonRunner -Vendor name: Lucky store
+16:05:26.794 INFO  JacksonRunner -Contact name: Lucky store
+16:05:26.794 INFO  JacksonRunner -Email: Lucky store
+16:05:26.795 INFO  JacksonRunner -Phone: Lucky store
+16:05:26.806 INFO  JacksonRunner -Business established in: Sun Aug 13 17:00:00 PDT 1967
+16:05:26.806 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@79c97cb
+16:05:26.807 INFO  JacksonRunner -Vendor id: 2
+16:05:26.807 INFO  JacksonRunner -Vendor name: Nike.com
+16:05:26.807 INFO  JacksonRunner -Contact name: Nike.com
+16:05:26.807 INFO  JacksonRunner -Email: Nike.com
+16:05:26.807 INFO  JacksonRunner -Phone: Nike.com
+16:05:26.807 INFO  JacksonRunner -Business established in: Mon Nov 05 16:00:00 PST 1951
+16:05:26.807 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@2d9caaeb
+16:08:24.619 INFO  JacksonRunner -Vendor id: 1
+16:08:24.621 INFO  JacksonRunner -Vendor name: Lucky store
+16:08:24.621 INFO  JacksonRunner -Contact name: Samuel King
+16:08:24.622 INFO  JacksonRunner -Email: email1@email.com
+16:08:24.622 INFO  JacksonRunner -Phone: 800-000-0002
+16:08:24.632 INFO  JacksonRunner -Business established in: Sun Aug 13 17:00:00 PDT 1967
+16:08:24.632 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@79c97cb
+16:08:24.632 INFO  JacksonRunner -Vendor id: 2
+16:08:24.633 INFO  JacksonRunner -Vendor name: Nike.com
+16:08:24.633 INFO  JacksonRunner -Contact name: null
+16:08:24.633 INFO  JacksonRunner -Email: email@email.com
+16:08:24.633 INFO  JacksonRunner -Phone: 800-000-0001
+16:08:24.633 INFO  JacksonRunner -Business established in: Mon Nov 05 16:00:00 PST 1951
+16:08:24.634 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@2d9caaeb
+16:10:29.934 INFO  JaxbRunner -id: 10
+16:10:29.938 INFO  JaxbRunner -First name: Johnson
+16:10:29.938 INFO  JaxbRunner -Last name: Claire
+16:10:29.947 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+16:10:29.947 INFO  JaxbRunner -Email: 1234@gmail.com
+16:10:29.947 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+16:10:29.947 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+16:10:29.947 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@5b3f61ff
+16:10:29.947 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@3e2059ae
+16:13:49.212 INFO  JaxbRunner -id: 10
+16:13:49.214 INFO  JaxbRunner -First name: Johnson
+16:13:49.214 INFO  JaxbRunner -Last name: Claire
+16:13:49.273 INFO  JaxbRunner -Birth Date: Wed Mar 14 00:00:00 PST 2001
+16:13:49.274 INFO  JaxbRunner -Email: 1234@gmail.com
+16:13:49.274 INFO  JaxbRunner -Registered on: Sun May 01 00:00:00 PDT 2022
+16:13:49.274 INFO  JaxbRunner -Last login: Wed May 11 00:00:00 PDT 2022
+16:13:49.274 INFO  JaxbRunner -Communication preference: com.solvd.OnlineShopping.model.CommunicationPreference@275bf9b3
+16:13:49.274 INFO  JaxbRunner -Setiing: com.solvd.OnlineShopping.model.Setting@1b8a29df
+16:13:49.274 INFO  JaxbRunner -Orders: [com.solvd.OnlineShopping.model.Order@4fbe37eb, com.solvd.OnlineShopping.model.Order@12a94400]
+23:05:56.257 INFO  JacksonRunner -Vendor id: 1
+23:05:56.265 INFO  JacksonRunner -Vendor name: Lucky store
+23:05:56.265 INFO  JacksonRunner -Contact name: Samuel King
+23:05:56.266 INFO  JacksonRunner -Email: email1@email.com
+23:05:56.266 INFO  JacksonRunner -Phone: 800-000-0002
+23:05:56.280 INFO  JacksonRunner -Business established in: Sun Aug 13 17:00:00 PDT 1967
+23:05:56.280 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@79c97cb
+23:05:56.281 INFO  JacksonRunner -Address id: 2
+23:05:56.281 INFO  JacksonRunner -House number: 1256
+23:05:56.282 INFO  JacksonRunner -Vendor id: 2
+23:05:56.283 INFO  JacksonRunner -Vendor name: Nike.com
+23:05:56.283 INFO  JacksonRunner -Contact name: null
+23:05:56.283 INFO  JacksonRunner -Email: email@email.com
+23:05:56.283 INFO  JacksonRunner -Phone: 800-000-0001
+23:05:56.284 INFO  JacksonRunner -Business established in: Mon Nov 05 16:00:00 PST 1951
+23:05:56.284 INFO  JacksonRunner -Address: com.solvd.OnlineShopping.model.Address@2d9caaeb
+23:05:56.284 INFO  JacksonRunner -Address id: 4
+23:05:56.287 INFO  JacksonRunner -House number: 786
+23:10:28.890 INFO  JacksonRunner -Vendor id: 1
+23:10:28.894 INFO  JacksonRunner -Vendor name: Lucky store
+23:10:28.894 INFO  JacksonRunner -Contact name: Samuel King
+23:10:28.894 INFO  JacksonRunner -Email: email1@email.com
+23:10:28.894 INFO  JacksonRunner -Phone: 800-000-0002
+23:10:28.906 INFO  JacksonRunner -Business established in: Sun Aug 13 17:00:00 PDT 1967
+23:10:28.906 INFO  JacksonRunner -Address id: 2
+23:10:28.907 INFO  JacksonRunner -House number: 1256
+23:10:28.907 INFO  JacksonRunner -Street: 2nd street
+23:10:28.907 INFO  JacksonRunner -Apartment number: null
+23:10:28.907 INFO  JacksonRunner -City: Sacramento
+23:10:28.907 INFO  JacksonRunner -State: CA
+23:10:28.907 INFO  JacksonRunner -Zip Code: 97001
+23:10:28.908 INFO  JacksonRunner -Country: USA
+23:10:28.908 INFO  JacksonRunner -Vendor id: 2
+23:10:28.908 INFO  JacksonRunner -Vendor name: Nike.com
+23:10:28.908 INFO  JacksonRunner -Contact name: null
+23:10:28.909 INFO  JacksonRunner -Email: email@email.com
+23:10:28.909 INFO  JacksonRunner -Phone: 800-000-0001
+23:10:28.909 INFO  JacksonRunner -Business established in: Mon Nov 05 16:00:00 PST 1951
+23:10:28.909 INFO  JacksonRunner -Address id: 4
+23:10:28.909 INFO  JacksonRunner -House number: 786
+23:10:28.909 INFO  JacksonRunner -Street: some street
+23:10:28.910 INFO  JacksonRunner -Apartment number: null
+23:10:28.910 INFO  JacksonRunner -City: Istanbul
+23:10:28.910 INFO  JacksonRunner -State: null
+23:10:28.910 INFO  JacksonRunner -Zip Code: 98001
+23:10:28.911 INFO  JacksonRunner -Country: Turkey

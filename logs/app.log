@@ -1,8 +1,39 @@
-	a15:49:44.910 INFO  DateAdapter -Implementation of JAXB-API has not been found on module path or classpath.
-17:50:45.685 INFO  JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
-17:55:23.712 INFO  JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
-17:59:59.813 ERROR JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
-18:00:28.365 ERROR JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
-18:07:47.641 ERROR JaxbRunner -10 counts of IllegalAnnotationExceptions
-19:31:41.710 INFO  JaxbRunner -com.solvd.OnlineShopping.model.User@4a3631f8
-19:40:17.654 INFO  JaxbRunner -Claire
+09:03:35.722 INFO  JaxbRunner -com.solvd.OnlineShopping.model.User@57c03d88
+09:05:51.386 INFO  JaxbRunner -1234@gmail.com
+09:08:11.757 INFO  JaxbRunner -Johnson
+09:11:06.140 INFO  JaxbRunner -Johnson
+09:11:06.143 INFO  JaxbRunner -1234@gmail.com
+09:13:28.999 INFO  JacksonRunner -Vendor id: 1
+09:13:29.014 INFO  JacksonRunner -Vendor name: Lucky store
+09:13:29.015 INFO  JacksonRunner -Contact name: Samuel King
+09:13:29.015 INFO  JacksonRunner -Email: email1@email.com
+09:13:29.015 INFO  JacksonRunner -Phone: 800-000-0002
+09:13:29.120 INFO  JacksonRunner -Business established in: Sun Aug 13 17:00:00 PDT 1967
+09:13:29.120 INFO  JacksonRunner -Address id: 2
+09:13:29.120 INFO  JacksonRunner -House number: 1256
+09:13:29.120 INFO  JacksonRunner -Street: 2nd street
+09:13:29.121 INFO  JacksonRunner -Apartment number: null
+09:13:29.122 INFO  JacksonRunner -City: Sacramento
+09:13:29.122 INFO  JacksonRunner -State: CA
+09:13:29.122 INFO  JacksonRunner -Zip Code: 97001
+09:13:29.122 INFO  JacksonRunner -Country: USA
+09:13:29.122 INFO  JacksonRunner -Vendor id: 2
+09:13:29.122 INFO  JacksonRunner -Vendor name: Nike.com
+09:13:29.122 INFO  JacksonRunner -Contact name: null
+09:13:29.123 INFO  JacksonRunner -Email: email@email.com
+09:13:29.123 INFO  JacksonRunner -Phone: 800-000-0001
+09:13:29.123 INFO  JacksonRunner -Business established in: Mon Nov 05 16:00:00 PST 1951
+09:13:29.123 INFO  JacksonRunner -Address id: 4
+09:13:29.123 INFO  JacksonRunner -House number: 786
+09:13:29.123 INFO  JacksonRunner -Street: some street
+09:13:29.123 INFO  JacksonRunner -Apartment number: null
+09:13:29.124 INFO  JacksonRunner -City: Istanbul
+09:13:29.124 INFO  JacksonRunner -State: null
+09:13:29.124 INFO  JacksonRunner -Zip Code: 98001
+09:13:29.124 INFO  JacksonRunner -Country: Turkey
+15:18:44.735 INFO  JacksonRunner -Vendor [id=1, vendorName=Lucky store, contactName=Samuel King, email=email1@email.com, phone=800-000-0002, estDate=Sun Aug 13 17:00:00 PDT 1967, address=com.solvd.OnlineShopping.model.Address@5a37d3ed]
+15:18:44.740 INFO  JacksonRunner -Vendor [id=2, vendorName=Nike.com, contactName=null, email=email@email.com, phone=800-000-0001, estDate=Mon Nov 05 16:00:00 PST 1951, address=com.solvd.OnlineShopping.model.Address@2d9caaeb]
+21:08:21.348 INFO  JaxbRunner -com.solvd.OnlineShopping.model.User@3ddc6915
+21:11:13.466 INFO  JaxbRunner -User [id=10, lastName=Johnson, firstName=Claire, birthday=Wed Mar 14 00:00:00 PST 2001, email=1234@gmail.com, registeredOn=Sun May 01 00:00:00 PDT 2022, lastLogin=Wed May 11 00:00:00 PDT 2022, communicationPreference=CommunicationPreference [id=0, appNotification=null, text=null, email=null], setting=Setting [id=0, location=null, advertisingPreference=null, language=English, cameraPermission=null], orders=[Order [id=0, orderDetail=null, totalPrice=null, placedAt=null, confirmationNumber=null, user=null], Order [id=0, orderDetail=null, totalPrice=null, placedAt=null, confirmationNumber=null, user=null]]]
+21:13:53.843 INFO  JacksonRunner -Vendor [id=1, vendorName=Lucky store, contactName=Samuel King, email=email1@email.com, phone=800-000-0002, estDate=Sun Aug 13 17:00:00 PDT 1967, address=Address [id=2, houseNumber=1256, street=2nd street, apartmentNumber=null, city=Sacramento, state=CA, postalCode=97001, country=USA]]
+21:13:53.846 INFO  JacksonRunner -Vendor [id=2, vendorName=Nike.com, contactName=null, email=email@email.com, phone=800-000-0001, estDate=Mon Nov 05 16:00:00 PST 1951, address=Address [id=4, houseNumber=786, street=some street, apartmentNumber=null, city=Istanbul, state=null, postalCode=98001, country=Turkey]]

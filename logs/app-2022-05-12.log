@@ -1,0 +1,8 @@
+	a15:49:44.910 INFO  DateAdapter -Implementation of JAXB-API has not been found on module path or classpath.
+17:50:45.685 INFO  JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
+17:55:23.712 INFO  JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
+17:59:59.813 ERROR JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
+18:00:28.365 ERROR JaxbRunner -Implementation of JAXB-API has not been found on module path or classpath.
+18:07:47.641 ERROR JaxbRunner -10 counts of IllegalAnnotationExceptions
+19:31:41.710 INFO  JaxbRunner -com.solvd.OnlineShopping.model.User@4a3631f8
+19:40:17.654 INFO  JaxbRunner -Claire
