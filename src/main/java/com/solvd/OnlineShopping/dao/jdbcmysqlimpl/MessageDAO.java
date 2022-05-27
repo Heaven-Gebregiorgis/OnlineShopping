@@ -12,7 +12,6 @@ import org.apache.logging.log4j.Logger;
 
 import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
 import com.solvd.OnlineShopping.dao.IMessageDAO;
-
 import com.solvd.OnlineShopping.model.Message;
 import com.solvd.OnlineShopping.model.User;
 

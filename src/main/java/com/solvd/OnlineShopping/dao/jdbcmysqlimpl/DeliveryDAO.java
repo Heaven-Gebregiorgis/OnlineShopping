@@ -12,9 +12,7 @@ import org.apache.logging.log4j.Logger;
 import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
 import com.solvd.OnlineShopping.dao.IDeliveryDAO;
 import com.solvd.OnlineShopping.model.Address;
-
 import com.solvd.OnlineShopping.model.Delivery;
-
 import com.solvd.OnlineShopping.model.User;
 import com.solvd.OnlineShopping.model.enums.DeliveryStatus;
 

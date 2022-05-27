@@ -14,7 +14,6 @@ import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
 import com.solvd.OnlineShopping.dao.IProductDAO;
 import com.solvd.OnlineShopping.model.Category;
 import com.solvd.OnlineShopping.model.Product;
-
 import com.solvd.OnlineShopping.model.Vendor;
 import com.solvd.OnlineShopping.model.enums.ProductStatus;
 

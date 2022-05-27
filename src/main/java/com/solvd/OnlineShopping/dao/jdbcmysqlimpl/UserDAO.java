@@ -1,23 +1,28 @@
 package com.solvd.OnlineShopping.dao.jdbcmysqlimpl;
 
 
-import java.util.Date;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.solvd.OnlineShopping.connection.MySQLConnectionPool;
 import com.solvd.OnlineShopping.dao.IUserDAO;
 import com.solvd.OnlineShopping.model.CommunicationPreference;
 import com.solvd.OnlineShopping.model.Setting;
 import com.solvd.OnlineShopping.model.User;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class UserDAO implements IUserDAO {
 
 	private static final Logger LOGGER = LogManager.getLogger(UserDAO.class);
 	private static final String GETENTITYSQL= "SELECT * FROM Heaven_Gebregiorgis.Users WHERE id=?";
-	private static final String SAVEENTITYSQL= "Insert into Heaven_Gebregiorgis.Addresses values (?,?,?,?,?,?,?,?,?)";
+	private static final String SAVEENTITYSQL= "Insert into Heaven_Gebregiorgis.Addresses Set id, last_name, first_name, birthday, email, registered_on, last-login, communication_preference_id, setting_id values (?,?,?,?,?,?,?,?,?)";
 	private static final String UPDATEENTITYSQL= "Update Heaven_Gebregiorgis.Users set 'last_name'=?, 'first_name'=?, 'birthday'=?, 'email'=?,'communication_preference_id'=?, 'setting_id'=? Where ('id' = ?)";
 	private static final String REMOVEENTITYSQL= "Delete from Heaven_Gebregiorgis.Users Where id = ?";	
 	
@@ -152,7 +157,7 @@ public class UserDAO implements IUserDAO {
 		Connection con = pool.getAvailableConnection();
 		List<User> list= new ArrayList<User>();
 		ResultSet rs = null;
-		try(PreparedStatement pr = con.prepareStatement("Select * from Heaven_Gebregiorgis.Addresses where city = ?")) {
+		try(PreparedStatement pr = con.prepareStatement("Select * from Heaven_Gebregiorgis.Addresses where registered_on = ?")) {
 		rs = pr.executeQuery();
 		
 		while(rs.next()) {

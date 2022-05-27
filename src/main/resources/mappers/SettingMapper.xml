@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "com.solvd.OnlineShopping.dao.ISettingDAO">
+	<resultMap type = "com.solvd.OnlineShopping.dao.Setting" id = "SettingResultMap" autoMapping = "false">
+		<id column = "id" property = "id"/>
+		<result column = "location" property = "location"/>
+		<result column = "advertising_preference" property = "advertisingPreference"/>
+		<result column = "language" property = "language"/>
+		<result column = "camera_permission" property = "cameraPermission"/>
+	</resultMap>
+	<select id = "getEntityById" resultMap = "CPResultMap">
+	select * from Settings where id = #{id}
+	</select>
+	<insert id = "saveEntity" useGeneratedKeys = "true" keyProperty = "id">
+	insert into Settings (id, location, advertising_preference, language, camera_permission) values
+	(#{id}, #{location}, #{advertisingPreference}, #{language}, #{cameraPermission})
+	</insert>
+	<delete id = "removeEntity">
+	delete from Settings where id = #{id}
+	</delete>
+	<update id = "updateEntity">
+	update Settings set 
+	location=#{location}, 
+	advertising_preference=#{advertisingPreference},  
+	language=#{language},
+	camera_permission=#{cameraPermission}
+	Where id =#{id}
+	</update>
+</mapper>
