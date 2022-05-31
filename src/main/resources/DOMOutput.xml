@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<vendors>
+    <vendor id="10">
+        <vendorname>Apple store</vendorname>
+        <contactname>Brandon</contactname>
+        <email>email1123@email.com</email>
+        <phone>800-000-0002</phone>
+        <address id="1">
+            <street>Broadway</street>
+            <city>Seattle</city>
+            <state>WA</state>
+            <zipCode>WA</zipCode>
+            <country>WA</country>
+        </address>
+    </vendor>
+</vendors>

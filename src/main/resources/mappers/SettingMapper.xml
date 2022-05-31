@@ -10,7 +10,7 @@
 		<result column = "language" property = "language"/>
 		<result column = "camera_permission" property = "cameraPermission"/>
 	</resultMap>
-	<select id = "getEntityById" resultMap = "CPResultMap">
+	<select id = "getEntityById" resultMap = "SettingResultMap">
 	select * from Settings where id = #{id}
 	</select>
 	<insert id = "saveEntity" useGeneratedKeys = "true" keyProperty = "id">

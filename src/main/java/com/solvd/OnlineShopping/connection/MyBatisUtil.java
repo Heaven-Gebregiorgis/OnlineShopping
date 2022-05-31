@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.Reader;
 
 import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.logging.log4j.LogManager;
@@ -16,15 +17,17 @@ public class MyBatisUtil {
 	private static SqlSessionFactory sessionFactory;
 	
 	static {
-		Reader reader;
+		
 		try {
-			reader= Resources.getResourceAsReader("/Users/apple/Desktop/Solvd automation/OnlineShopping/src/main/resources/mybatis_config.xml");
-			sessionFactory = new SqlSessionFactoryBuilder().build(reader);
+			Reader reader= Resources.getResourceAsReader("/Users/apple/Desktop/Solvd automation/OnlineShopping/src/main/resources/mybatis_config.xml");
+			 sessionFactory = new SqlSessionFactoryBuilder().build(reader);
 		}catch(IOException e) {
 			LOGGER.error(e);
 		}
 	}
-	public static SqlSessionFactory getSqlSessionFactory() {
-		return sessionFactory;
-	}
+	
+	    public static SqlSession getSqlSession(){
+	        SqlSession sqlSession = sessionFactory.openSession();
+	        return sqlSession;
+	    }
 }
